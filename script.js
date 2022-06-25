@@ -1,12 +1,9 @@
 let playerScore = 0;
 let computerScore = 0;
-
 let computerInput;
-
 let gameMessage;
 
 function computerChoice(computerChoice){
-    
     if(computerChoice == 1){
             
        computerInput = "rock";
@@ -53,25 +50,31 @@ return gameMessage
 
 
 
-function playRounds(game){
-   for (let index = 0; index < game; index++) {
+function playRounds(rounds){
+    
+   for (let index = 0; index < rounds; index++) {
     let randomNumber = Math.floor(Math.random() * 3 )+1;   
-    let playerInput = "rock";   
+    let playerChoice = window.prompt("Choose rock paper or scissors")
+    playerInput = playerChoice.toLowerCase();   
     computerChoice(randomNumber);   
     playGame(playerInput, computerInput);
-    console.log("Player plays:" + playerInput + " Computer plays:" + computerInput);
-    console.log(gameMessage);
+    alert("Player plays:" + playerInput + " Computer plays:" + computerInput);
+    alert(gameMessage);
     
 
        
    }
    console.log("Player score: " + playerScore + "Computer score:" + computerScore);
    if(playerScore > computerScore){
-       console.log("Player wins!");
+       alert("Player Score:" + playerScore + "Computer Score:" + computerScore);
+       alert("Player wins!");
    }else if (computerScore > playerScore){
-       console.log("Computer wins");
+       
+       alert("Player Score:" + playerScore + "Computer Score:" + computerScore);
+       alert("Computer wins");
    }else{
-        console.log("Its a tie");
+        alert("Player Score:" + playerScore + "Computer Score:" + computerScore);
+        alert("Its a tie");
 
    }
    
