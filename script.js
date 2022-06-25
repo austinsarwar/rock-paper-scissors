@@ -61,7 +61,18 @@ function playRounds(game){
     playGame(playerInput, computerInput);
     console.log("Player plays:" + playerInput + " Computer plays:" + computerInput);
     console.log(gameMessage);
+    
+
        
+   }
+   console.log("Player score: " + playerScore + "Computer score:" + computerScore);
+   if(playerScore > computerScore){
+       console.log("Player wins!");
+   }else if (computerScore > playerScore){
+       console.log("Computer wins");
+   }else{
+        console.log("Its a tie");
+
    }
    
 }
