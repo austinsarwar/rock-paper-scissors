@@ -1,8 +1,9 @@
 let playerScore = 0;
 let computerScore = 0;
-let playerInput = "rock";
+
 let computerInput;
-let randomNumber = Math.floor(Math.random() * 3 )+1;
+
+let gameMessage;
 
 function computerChoice(computerChoice){
     
@@ -16,29 +17,52 @@ function computerChoice(computerChoice){
     }
     return computerInput
 }
-computerChoice(randomNumber);
 
+function playGame(playerInput, computerInput){
 
 if(playerInput == "rock" && computerInput == "paper"){
-    console.log("Computer wins");
+    gameMessage = "Computer wins!";
     computerScore ++;
 }else if(playerInput == "rock" && computerInput == "scissors"){
+    gameMessage = "Player wins!";
     playerScore++;
-    console.log("Player wins");
+
+    
     
 }else if(playerInput == "paper" && computerInput == "rock"){
+    gameMessage = "Player wins!";
     playerScore++;
-    console.log("Player wins");
+    
 }
 else if(playerInput == "paper" && computerInput == "scissors"){
+    gameMessage = "Computer wins!";
     computerScore++;
-    console.log("Computer wins");
 }else if (playerInput == "scissors" && computerInput == "rock"){
+    gameMessage = "Computer wins!";
     computerScore++;
-    console.log("Computer wins");
+    
 }else if (playerInput == "scissors" && computerInput == "paper"){
+    gameMessage = "Computer wins!";
     playerScore++;
-    console.log("Player wins");
+   
+}else{
+    gameMessage = "Its a tie!";
+}
+return gameMessage
 }
 
-console.log("Player PLays: " + playerInput + "/" + " Computer Plays: " + computerInput);
+
+
+function playRounds(game){
+   for (let index = 0; index < game; index++) {
+    let randomNumber = Math.floor(Math.random() * 3 )+1;   
+    let playerInput = "rock";   
+    computerChoice(randomNumber);   
+    playGame(playerInput, computerInput);
+    console.log("Player plays:" + playerInput + " Computer plays:" + computerInput);
+    console.log(gameMessage);
+       
+   }
+   
+}
+playRounds(4);
