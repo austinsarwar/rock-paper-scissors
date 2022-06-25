@@ -39,7 +39,7 @@ else if(playerInput == "paper" && computerInput == "scissors"){
     computerScore++;
     
 }else if (playerInput == "scissors" && computerInput == "paper"){
-    gameMessage = "Computer wins!";
+    gameMessage = "Player wins!";
     playerScore++;
    
 }else{
