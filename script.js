@@ -1,6 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
 let computerInput;
+let playerInput;
 let gameMessage;
 
 function computerChoice(computerChoice){
@@ -52,10 +53,20 @@ return gameMessage
 
 function playRounds(rounds){
     
+    
    for (let index = 0; index < rounds; index++) {
-    let randomNumber = Math.floor(Math.random() * 3 )+1;   
-    let playerChoice = window.prompt("Choose rock paper or scissors")
-    playerInput = playerChoice.toLowerCase();   
+    
+    let randomNumber = Math.floor(Math.random() * 3 )+1; 
+    var valid_ans = false;
+    while(!valid_ans) { 
+       let playerChoice = window.prompt("Choose rock paper or scissors");
+       
+      if(playerChoice.toLowerCase() == "rock" || playerChoice.toLowerCase() == "paper" || playerChoice.toLowerCase() == "scissors"){
+          playerInput = playerChoice.toLowerCase(); 
+          valid_ans = true;
+      }
+    }
+   
     computerChoice(randomNumber);   
     playGame(playerInput, computerInput);
     alert("Player plays:" + playerInput + " Computer plays:" + computerInput);
