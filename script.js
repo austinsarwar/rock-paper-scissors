@@ -59,7 +59,7 @@ function playRounds(rounds){
     let randomNumber = Math.floor(Math.random() * 3 )+1; 
     var valid_ans = false;
     while(!valid_ans) { 
-       let playerChoice = window.prompt("Choose rock paper or scissors");
+       let playerChoice = console.log("Choose rock paper or scissors");
        
       if(playerChoice.toLowerCase() == "rock" || playerChoice.toLowerCase() == "paper" || playerChoice.toLowerCase() == "scissors"){
           playerInput = playerChoice.toLowerCase(); 
@@ -85,7 +85,7 @@ function playRounds(rounds){
        console.log("Computer wins");
    }else{
         console.log("Player Score:" + playerScore + "Computer Score:" + computerScore);
-        alert("Its a tie");
+        console.log("Its a tie");
 
    }
    
