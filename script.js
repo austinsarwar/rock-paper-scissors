@@ -69,22 +69,22 @@ function playRounds(rounds){
    
     computerChoice(randomNumber);   
     playGame(playerInput, computerInput);
-    alert("Player plays:" + playerInput + " Computer plays:" + computerInput);
-    alert(gameMessage);
+    console.log("Player plays:" + playerInput + " Computer plays:" + computerInput);
+    console.log(gameMessage);
     
 
        
    }
    console.log("Player score: " + playerScore + "Computer score:" + computerScore);
    if(playerScore > computerScore){
-       alert("Player Score:" + playerScore + "Computer Score:" + computerScore);
-       alert("Player wins!");
+       console.log("Player Score:" + playerScore + "Computer Score:" + computerScore);
+       console.log("Player wins!");
    }else if (computerScore > playerScore){
        
-       alert("Player Score:" + playerScore + "Computer Score:" + computerScore);
-       alert("Computer wins");
+       console.log("Player Score:" + playerScore + "Computer Score:" + computerScore);
+       console.log("Computer wins");
    }else{
-        alert("Player Score:" + playerScore + "Computer Score:" + computerScore);
+        console.log("Player Score:" + playerScore + "Computer Score:" + computerScore);
         alert("Its a tie");
 
    }
